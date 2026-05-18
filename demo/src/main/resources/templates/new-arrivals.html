@@ -17,22 +17,7 @@
 </header>
 
 <!--ヘッダー下メニュー（※開閉メニューはhtmlの下の方にあります）-->
-<div id="menubar2">
-<nav>
-<ul>
-<li><a href="index.html">Home<span>ホーム</span></a></li>
-<li><a href="new-arrivals.html">New Arrivals<span>最新アイテム</span></a>
-	<ul>
-	<li><a href="#link1">最新アイテム1</a></li>
-	<li><a href="#link2">最新アイテム2</a></li>
-	<li><a href="#link3">最新アイテム3</a></li>
-	</ul>
-</li>
-<li><a href="collection.html">Collection<span>コレクション</span></a></li>
-<li><a href="style-book.html">Style Book<span>スタイル</span></a></li>
-</ul>
-</nav>
-</div>
+<header th:replace="~{fragments/header :: header}"></header>
 
 <div id="contents">
 
@@ -181,47 +166,7 @@ Illustratorなどのsvgが作れる環境なら自作もできます。自作し
 
 </div>
 <!--/#contents-->
-
-<footer>
-
-<div>
-<p class="logo"><img src="images/logo.png" alt="Sample Fashion"></p>
-<p class="c">東京都XXX区XXXXビル１F<br>
-03-0000-0000</p>
-<ul class="sns1">
-<li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-<li><a href="#"><i class="fab fa-line"></i></a></li>
-<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-</ul>
-</div>
-
-<div>
-<div class="menu">
-<ul>
-<li><a href="#">ここにメニューを入れます</a></li>
-<li><a href="#">ここにメニューを入れます</a></li>
-<li><a href="#">ここにメニューを入れます</a></li>
-<li><a href="#">ここにメニューを入れます</a></li>
-<li><a href="#">ここにメニューを入れます</a></li>
-</ul>
-<ul>
-<li><a href="#">ここにメニューを入れます</a></li>
-<li><a href="#">ここにメニューを入れます</a></li>
-<li><a href="#">ここにメニューを入れます</a></li>
-<li><a href="#">ここにメニューを入れます</a></li>
-<li><a href="#">ここにメニューを入れます</a></li>
-</ul>
-<ul>
-<li><a href="#">ここにメニューを入れます</a></li>
-<li><a href="#">ここにメニューを入れます</a></li>
-<li><a href="#">ここにメニューを入れます</a></li>
-</ul>
-</div>
-<small>Copyright© あなたのサイト名 All Rights Reserved.</small>
-</div>
-
-</footer>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
 
 <!--以下の行はテンプレートの著作。削除しないで下さい。-->
 <span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
