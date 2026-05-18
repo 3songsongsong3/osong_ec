@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>若い女性ファッション＆雑貨ブランド向け 無料ホームページテンプレート tp_fashion2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="index.html"><img src="images/logo-simple.png" alt="あなたのサイト名"></a></h1>
+</header>
+
+<!--ヘッダー下メニュー（※開閉メニューはhtmlの下の方にあります）-->
+<header th:replace="~{fragments/header :: header}"></header>
+
+
+<div id="contents">
+
+<main>
+
+<section>
+
+<h2>Collection<span>コレクション</span></h2>
+
+<div class="list-mask1">
+    <div class="list inview" th:each="product : ${products}">
+        <figure>
+            <img th:src="@{${product.imageUrl}}"
+                 th:alt="${product.productName}">
+        </figure>
+        <div class="text">
+            <!-- 商品名 -->
+            <h4 th:text="${product.productName}">タイトル</h4>
+            <!-- 商品説明 -->
+            <p th:text="${product.description}">
+                ここに説明を書きます。サンプルテキスト。
+            </p>
+            <!-- 価格を表示する場合は以下を使用 -->
+            <!--
+            <p class="price">
+                ¥<span th:text="${#numbers.formatInteger(product.price, 3, 'COMMA')}">0</span>
+            </p>
+            -->
+        </div>
+    </div>
+</div>
+<!--/.list-mask1-->
+
+</section>
+
+</main>
+
+</div>
+<!--/#contents-->
+<header th:replace="~{fragments/footer :: footer}"></header>
+
+<!--以下の行はテンプレートの著作。削除しないで下さい。-->
+<span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+
+</div>
+<!--/#container-->
+
+<!--ページの上部へ戻るボタン-->
+<div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
+
+<!--開閉ボタン（ハンバーガーアイコン）-->
+<div id="menubar_hdr">
+<span></span><span></span><span></span>
+</div>
+
+<!--開閉メニュー-->
+<div id="menubar">
+
+<p class="logo"><img src="images/logo.png" alt="Sample Fashion"></p>
+
+<nav>
+<ul>
+<li><a href="index.html">Home<span>ホーム</span></a></li>
+<li><a href="new-arrivals.html">New Arrivals<span>最新アイテム</span></a>
+	<ul>
+	<li><a href="new-arrivals.html#link1">最新アイテム1</a></li>
+	<li><a href="new-arrivals.html#link2">最新アイテム2</a></li>
+	<li><a href="new-arrivals.html#link3">最新アイテム3</a></li>
+	</ul>
+</li>
+<li><a href="collection.html">Collection<span>コレクション</span></a></li>
+<li><a href="style-book.html">Style Book<span>スタイル</span></a></li>
+</ul>
+</nav>
+
+</div>
+<!--/#menubar-->
+
+<!--jQueryの読み込み-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--パララックス（inview）-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+<script src="js/jquery.inview_set.js"></script>
+
+<!--このテンプレート専用のスクリプト-->
+<script src="js/main.js"></script>
+
+</body>
+</html>

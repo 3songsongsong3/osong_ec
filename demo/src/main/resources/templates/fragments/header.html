@@ -1,0 +1,60 @@
+<!-- templates/fragments/header.html -->
+<header th:fragment="header">
+
+    <div id="menubar2">
+        <nav>
+            <ul>
+                <li>
+                    <a th:href="@{/}">
+                        Home
+                        <span>ホーム</span>
+                    </a>
+                </li>
+				<li>
+                    <a th:href="@{/shop}">
+                        Shop
+                        <span>店舗情報</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/new-arrivals}">
+                        New Arrivals
+                        <span>最新アイテム</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a th:href="@{/new-arrivals#link1}">
+                                最新アイテム1
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/new-arrivals#link2}">
+                                最新アイテム2
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/new-arrivals#link3}">
+                                最新アイテム3
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a th:href="@{/products}">
+                        Collection
+                        <span>コレクション</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a th:href="@{/style-book}">
+                        Style Book
+                        <span>スタイル</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</header>

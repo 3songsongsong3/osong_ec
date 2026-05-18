@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>若い女性ファッション＆雑貨ブランド向け 無料ホームページテンプレート tp_fashion2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="home">
+
+<div id="container">
+
+<header>
+
+<h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="あなたのサイト名"></a></h1>
+
+<!--メイン画像-->
+<div class="mainimg">
+<div class="slide img1">
+<picture><source media="(max-width: 800px)" srcset="images/1.jpg"><img src="images/1.jpg" alt=""></picture>
+</div>
+</div>
+
+</header>
+
+<header th:replace="~{fragments/header :: header}"></header>
+
+
+<div id="contents">
+
+<main>
+
+<section>
+
+<h2>New Arrivals<span>最新アイテム</span></h2>
+<div class="list-mask1">
+    <div class="list"
+         th:each="product, stat : ${products}"
+         th:classappend="' mask' + (${stat.index} % 6 + 1) + ' inview'">
+        <figure>
+            <a th:href="@{/products/{id}(id=${product.productId})}">
+                <img th:src="@{${product.imageUrl}}"
+                     th:alt="${product.productName}">
+            </a>
+        </figure>
+        <div class="text">
+            <h4 th:text="${product.productName}">商品名</h4>
+            <p th:text="${product.description}">
+                商品説明
+            </p>
+            <p class="price">
+                ¥<span th:text="${#numbers.formatInteger(product.price, 3, 'COMMA')}">0</span>
+            </p>
+        </div>
+    </div>
+</div>
+<!--/.list-mask1-->
+
+<div class="btn-grad1 fit c"><a href="/products">View All</a></div>
+
+</section>
+
+<section class="mb0">
+
+<div class="overlay2 bleed-x">
+
+<a href="collection.html">
+<div class="list image1">
+<div class="text">
+<h4>Sample Label</h4>
+<p>ここの背景画像は、cssフォルダのstyle.cssの「.overlay2 .image1」のブロックで指定します。<br>
+中身のテキスト量によって高さが変わるので、ブロック単位である程度揃えておくときれいです。ほとんどテキストがない場合は、min-height指定かアスペクト比指定にしておくことをおすすめ。</p>
+</div>
+</div>
+</a>
+
+<a href="collection.html">
+<div class="list image2 reverse">
+<div class="text">
+<h4>Demo Brand</h4>
+<p>ボックスにreverseを追加すると、このように逆配置になります。<br>
+ここの背景画像は、cssフォルダのstyle.cssの「.overlay2 .image2」のブロックで指定します。ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。ここに説明を入れます。サンプルテキスト。ここに説明を入れます。</p>
+</div>
+</div>
+</a>
+
+</div>
+
+</section>
+
+<section class="bg bg1-light">
+
+<h2>Style Book<span>スタイルブック</span></h2>
+
+<div class="slideimg bleed-x">
+<div class="img rtl">
+<div><a href="#"><img src="images/img1.jpg" alt=""></a></div>
+<div><a href="#"><img src="images/img2.jpg" alt=""></a></div>
+<div><a href="#"><img src="images/img7.jpg" alt=""></a></div>
+<div><a href="#"><img src="images/img10.jpg" alt=""></a></div>
+<div><a href="#"><img src="images/img11.jpg" alt=""></a></div>
+<div><a href="#"><img src="images/img12.jpg" alt=""></a></div>
+<div><a href="#"><img src="images/img13.jpg" alt=""></a></div>
+<div><a href="#"><img src="images/img14.jpg" alt=""></a></div>
+</div>
+</div>
+
+<div class="btn-grad1 fit c"><a href="#">View All</a></div>
+
+</section>
+
+<section class="bleed-x">
+
+<div class="list-yoko-scroll2" data-speed="1">
+
+<div class="hscroll1-sticky">
+
+<button type="button" aria-label="skip gallery">
+<span>SKIP <i class="fa-solid fa-angles-down"></i></span>
+</button>
+
+<div class="hscroll1-progress"><div class="hscroll1-progress-bar"></div></div>
+
+<div class="hscroll1-track">
+<div><img src="images/img1.jpg" alt=""></div>
+<div><img src="images/img2.jpg" alt=""></div>
+<div><img src="images/img3.jpg" alt=""></div>
+<div><img src="images/img7.jpg" alt=""></div>
+<div><img src="images/img10.jpg" alt=""></div>
+<div><img src="images/img11.jpg" alt=""></div>
+<div><img src="images/img12.jpg" alt=""></div>
+<div><img src="images/img13.jpg" alt=""></div>
+<div><img src="images/img14.jpg" alt=""></div>
+</div>
+
+</div>
+
+</div>
+<!--/.list-yoko-scroll2-->
+
+</section>
+
+<section class="c2">
+
+<div class="title">
+<h2>News<span>お知らせ</span></h2>
+</div>
+
+<div class="text">
+<dl class="news">
+<dt>2026/03/07</dt>
+<dd>若い女性ファッション＆雑貨ブランド向け 無料ホームページテンプレート tp_fashion2公開。</dd>
+<dt>2000/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>2000/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>2000/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+<dt>2000/00/00</dt>
+<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+</dl>
+</div>
+
+</section>
+
+<section>
+
+<h2>テンプレートのご利用前に必ずお読み下さい</h2>
+
+<h3>利用規約のご案内</h3>
+<p>このテンプレートは、<a href="https://template-party.com/">Template Party</a>にて無料配布している『若い女性ファッション＆雑貨ブランド向け 無料ホームページテンプレート tp_fashion2』です。必ずダウンロード先のサイトの<a href="https://template-party.com/read.html">利用規約</a>をご一読の上でご利用下さい。</p>
+<p><strong class="color-check">HP最下部の著作表示『Web Design:Template-Party』は無断で削除しないで下さい。</strong><br>
+わざと見えなく加工する事も禁止です。</p>
+<p><strong class="color-check">下部の著作を外したい場合は</strong><br>
+<a href="https://template-party.com/">Template-Party</a>の<a href="https://template-party.com/member.html">ライセンス契約</a>を行う事でHP下部の著作を外す事ができます。</p>
+
+<h3>当テンプレートの詳しい使い方は</h3>
+<p><a href="_manual.html">こちらをご覧下さい。</a></p>
+
+</section>
+
+<section>
+<h2>パーツコーナーリニューアルしました</h2>
+<p>「他サイトと同じデザインは嫌」「完成テンプレだけではちょっと物足りない」といった場合に、コピペだけで簡単に新しいパーツを追加できます。<br>
+<a href="https://template-party.com/parts/" target="_blank"><img src="https://template-party.com/images/banner/banner_parts_2026.webp" alt=""></a></p>
+</section>
+
+<section>
+
+<h2>無料CMS（Template Party CMS）のご案内</h2>
+<p>誰でも簡単にホームページを作れる無料CMS（ノーコードツール）を配布中です。<br>
+管理画面で使いたいパーツを選ぶと、自動で入力フォームが出現しますので、あとはテキスト入力＆画像をドラッグ＆ドロップするだけで、サイトが完成します。<br>
+もちろんWEB業者様のご利用も無料（※当サイトのテンプレがベースの場合）。クライアント向けにご活用下さい。</p>
+<p><a href="https://template-party-cms.com/" target="_blank"><img src="https://template-party.com/images/banner/tpcms_page.jpg" alt=""></a></p>
+
+</section>
+
+<section>
+
+<h2>無料素材サイト（haconana）のご案内</h2>
+<p>写真・イラスト・動画のフリー素材サイトです。</p>
+<p><a href="https://haconana.com/" target="_blank"><img src="https://template-party.com/images/banner/haconana_banner2.jpg" alt=""></a></p>
+
+</section>
+
+</main>
+
+</div>
+<!--/#contents-->
+<header th:replace="~{fragments/footer :: footer}"></header>
+
+<!--以下の行はテンプレートの著作。削除しないで下さい。-->
+<span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+
+</div>
+<!--/#container-->
+
+<!--ページの上部へ戻るボタン-->
+<div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
+
+<!--開閉ボタン（ハンバーガーアイコン）-->
+<div id="menubar_hdr">
+<span></span><span></span><span></span>
+</div>
+
+<!--開閉メニュー-->
+<div id="menubar">
+
+<p class="logo"><img src="images/logo.png" alt="Sample Fashion"></p>
+
+<nav>
+<ul>
+<li><a href="index.html">Home<span>ホーム</span></a></li>
+<li><a href="new-arrivals.html">New Arrivals<span>最新アイテム</span></a>
+	<ul>
+	<li><a href="new-arrivals.html#link1">最新アイテム1</a></li>
+	<li><a href="new-arrivals.html#link2">最新アイテム2</a></li>
+	<li><a href="new-arrivals.html#link3">最新アイテム3</a></li>
+	</ul>
+</li>
+<li><a href="/products">Collection<span>コレクション</span></a></li>
+<li><a href="style-book.html">Style Book<span>スタイル</span></a></li>
+</ul>
+</nav>
+
+</div>
+<!--/#menubar-->
+
+<!--jQueryの読み込み-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--パララックス（inview）-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+<script src="js/jquery.inview_set.js"></script>
+
+<!--このテンプレート専用のスクリプト-->
+<script src="js/main.js"></script>
+
+</body>
+</html>
