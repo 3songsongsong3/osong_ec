@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>若い女性ファッション＆雑貨ブランド向け 無料ホームページテンプレート tp_fashion2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/product.css}">
+
+</head>
+<body>
+
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="index.html"><img th:src="@{/images/logo-simple.png}" alt="あなたのサイト名"></a></h1>
+</header>
+<header th:replace="~{fragments/header :: header}"></header>
+<div id="contents">
+    <section class="product-detail">
+        <!-- =========================
+             左側：商品画像
+        ========================== -->
+        <div class="product-gallery">
+            <!-- サムネ -->
+            <div class="thumbnail-list">
+                <img th:src="@{/images/product1.jpg}" alt="">
+                <img th:src="@{/images/product2.jpg}" alt="">
+                <img th:src="@{/images/product3.jpg}" alt="">
+                <img th:src="@{/images/product4.jpg}" alt="">
+                <img th:src="@{/images/product5.jpg}" alt="">
+            </div>
+            <!-- メイン　イメージ -->
+            <div class="main-image">
+                <img th:src="@{/images/product1.jpg}" alt="ハートポイントクロップTシャツ">
+            </div>
+        </div>
+        <!-- =========================
+             右側：商品情報
+        ========================== -->
+        <div class="product-info">
+            <h1 class="product-name">
+                ハートポイントクロップ半袖Tシャツ [4色]
+            </h1>
+            <div class="rating-area">
+                <span class="stars">★★★★★</span>
+                <span class="rating-score">5.0</span>
+                <a href="#" class="review-link">6件のレビュー</a>
+            </div>
+            <div class="price-area">
+                <p class="original-price">¥3,708</p>
+                <p class="sale-rate">39% OFF</p>
+                <p class="main-price">¥2,248</p>
+                <p class="coupon-price">
+                    ¥1,798 <span>コード利用で最安値</span>
+                </p>
+            </div>
+            <div class="info-table">
+                <div class="info-row">
+                    <span class="label">関税/消費税</span>
+                    <span class="value">
+                        カート内で関税・消費税の金額をご確認いただけます。
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="label">配送予定日</span>
+                    <span class="value">
+                        平均6日以内に配送します。
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="label">配送料</span>
+                    <span class="value">
+                        ¥550<br>
+                        ¥12,000以上ご購入時 送料無料
+                    </span>
+                </div>
+            </div>
+            <div class="option-group">
+                <label>カラー</label>
+                <select>
+                    <option>ホワイト</option>
+                    <option>ブラック</option>
+                    <option>ピンク</option>
+                </select>
+            </div>
+            <div class="option-group">
+                <label>サイズ</label>
+                <select>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
+            </div>
+            <div class="option-group">
+                <label>数量</label>
+                <input type="number" value="1" min="1">
+            </div>
+            <div class="action-buttons">
+                <button class="favorite-btn">♡</button>
+                <button class="cart-btn">カートに入れる</button>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!--/#contents-->
+<header th:replace="~{fragments/footer :: footer}"></header>
+</div>
+
+<!-- jQueryの読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- パララックス（inview） -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+<!-- 自作スクリプト -->
+<script th:src="@{/js/jquery.inview_set.js}"></script>
+<!-- このテンプレート専用のスクリプト -->
+<script th:src="@{/js/main.js}"></script>
+
+</body>
+</html>

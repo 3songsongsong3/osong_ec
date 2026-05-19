@@ -1,0 +1,220 @@
+/* =========================
+   상품 상세 전체 레이아웃
+========================= */
+.product-detail {
+    display: flex;
+    gap: 60px;
+    margin: 60px auto;
+    max-width: 1200px;
+    align-items: flex-start;
+}
+
+/* =========================
+   왼쪽 이미지 영역
+========================= */
+.product-gallery {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+
+.thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.thumbnail-list img {
+    width: 70px;
+    height: 90px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.thumbnail-list img:hover {
+    border-color: #f7a8c4;
+}
+
+.main-image img {
+    width: 520px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* =========================
+   오른쪽 상품 정보
+========================= */
+.product-info {
+    width: 460px;
+}
+
+/* 브랜드 */
+.brand-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.brand-sub {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 28px;
+}
+
+/* 상품명 */
+.product-name {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 평점 */
+.rating-area {
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.stars {
+    font-weight: bold;
+}
+
+.rating-score {
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+.review-link {
+    margin-left: 10px;
+    color: #777;
+    text-decoration: underline;
+}
+
+/* 가격 */
+.price-area {
+    margin-bottom: 35px;
+}
+
+.original-price {
+    font-size: 18px;
+    color: #999;
+    text-decoration: line-through;
+    margin: 0;
+}
+
+.sale-rate {
+    font-size: 18px;
+    color: #e91e63;
+    font-weight: 700;
+    margin: 6px 0;
+}
+
+.main-price {
+    font-size: 46px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+
+.coupon-price {
+    font-size: 34px;
+    font-weight: 700;
+    color: #e53935;
+    margin-top: 8px;
+}
+
+.coupon-price span {
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 8px;
+}
+
+/* 정보 테이블 */
+.info-table {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 24px 0;
+    margin-bottom: 30px;
+}
+
+.info-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 18px;
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+}
+
+.label {
+    width: 110px;
+    font-size: 12px;
+    color: #888;
+    flex-shrink: 0;
+}
+
+.value {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+    font-weight: 500;
+}
+
+/* 옵션 */
+.option-group {
+    margin-bottom: 18px;
+}
+
+.option-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #666;
+}
+
+.option-group select,
+.option-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* 버튼 */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.favorite-btn {
+    width: 56px;
+    border: 1px solid #f8bfd4;
+    background: #fff0f6;
+    color: #e91e63;
+    border-radius: 8px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-btn {
+    flex: 1;
+    padding: 16px;
+    background: linear-gradient(90deg, #ff8fb1, #f06292);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cart-btn:hover {
+    opacity: 0.9;
+}
