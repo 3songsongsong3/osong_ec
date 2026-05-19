@@ -70,7 +70,7 @@ Spring Boot と Thymeleaf を用いて開発している EC サイトの Web ア
 本プロジェクトでは、AWS EC2 上に Spring Boot アプリケーションを配置し、
 Nginx をリバースプロキシとして利用する構成を採用しています。
 
-```text
+
 Client (Browser)
         ↓ HTTP/HTTPS (80/443)
       Nginx
