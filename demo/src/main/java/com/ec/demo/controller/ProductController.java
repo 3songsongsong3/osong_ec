@@ -30,7 +30,6 @@ public class ProductController {
         this.productService = productService;
     }
     
-	
 	@GetMapping
 	public String getProductsPage(Model model) {
 		List<Product> product = productService.findAll();
@@ -38,4 +37,13 @@ public class ProductController {
 		
 		return "collection";
 	}
+	
+	@GetMapping("/{productId}")
+	public String getProductDetail(Product product, Model model) {
+		Product result = productService.findById(product.getProductId());
+		model.addAttribute("product", result);
+		
+		return "product";
+	}
+	
 }
