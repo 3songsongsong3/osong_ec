@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>若い女性ファッション＆雑貨ブランド向け 無料ホームページテンプレート tp_fashion2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/store.css}">
+</head>
+<body>
+
+<div id="container">
+	<header>
+	<h1 id="logo"><a href="index.html"><img th:src="@{/images/logo-simple.png}" alt="あなたのサイト名"></a></h1>
+	</header>
+	<header th:replace="~{fragments/header :: header}"></header>
+	<div id="contents">
+	    <!-- Hero Section -->
+	    <!-- <section class="store-hero">
+	        <div class="store-hero-text">
+	            <h2>実店舗のご案内</h2>
+	            <p>
+	                オンラインで人気の商品を、実際に手に取ってご覧いただけます。<br>
+	                ゆったりとした空間で、特別なショッピング体験をお楽しみください。
+	            </p>
+	        </div>
+	    </section> -->
+	    <!-- Concept -->
+	    <img th:src="@{/images/store/store-main.jpg}" alt="店舗外観">
+	    
+	    <section class="store-concept">
+	        <h3>Our Concept</h3>
+	        <p>
+	            シンプルで心地よい空間の中で、
+	            トレンドと日常をつなぐファッションをご提案します。<br>
+	            韓国ファッションの感性と、無印良品のような
+	            ミニマルな美しさを融合させたショップです。
+	        </p>
+	    </section>
+	    <!-- Store Info -->
+	    <section class="store-info-section">
+	        <h3>店舗情報</h3>
+	        <table class="store-table">
+	            <tr>
+	                <th>店舗名</th>
+	                <td>OSong Flagship Store</td>
+	            </tr>
+	            <tr>
+	                <th>住所</th>
+	                <td>神奈川県川崎市中原区小杉陣屋町１−２２−３０</td>
+	            </tr>
+	            <tr>
+	                <th>営業時間</th>
+	                <td>11:00 ～ 20:00</td>
+	            </tr>
+	            <tr>
+	                <th>定休日</th>
+	                <td>毎週火曜日</td>
+	            </tr>
+	            <tr>
+	                <th>アクセス</th>
+	                <td>新丸子駅より徒歩15分</td>
+	            </tr>
+	            <tr>
+	                <th>電話番号</th>
+	                <td>03-1234-5678</td>
+	            </tr>
+	        </table>
+	    </section>
+	    <!-- Map -->
+	    <section class="store-map">
+	        <h3>Access</h3>
+	        <div class="map-placeholder">
+	            <iframe
+				    width="50%"
+				    height="420"
+				    style="border:0; border-radius: 12px;"
+				    loading="lazy"
+				    allowfullscreen
+				    referrerpolicy="no-referrer-when-downgrade"
+				    th:src="'https://www.google.com/maps/embed/v1/place?key='
+				            + 'AIzaSyDlTYrKKZIxYYiWkj5kVvHjsjQxQKxoHWY'
+				            + '&q='
+				            + ${#uris.escapeQueryParam('神奈川県川崎市中原区小杉陣屋町1-22-30')}
+				            + '&zoom=19'">
+				</iframe>
+	        </div>
+	    </section>
+	
+	</div>
+	<header th:replace="~{fragments/footer :: footer}"></header>
+	
+</div>
+
+</body>
+</html>
