@@ -47,5 +47,16 @@ public class HomeController {
 		
 		return "index";
 	}
-	
+
+	/**
+	 * 店舗情報を表示
+	 * @param Model model
+	 * @return HTML page
+	 */
+	@GetMapping("/shopInfo")
+	public String getShopPage(Model model) {
+		
+		
+		return "shop_info";
+	}
 }

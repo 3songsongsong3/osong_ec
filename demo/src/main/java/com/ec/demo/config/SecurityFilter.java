@@ -14,6 +14,7 @@ public class SecurityFilter {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(
                         "/",
+                        "/shopInfo",
                         "/products",
                         "/products/**",
                         "/css/**",
