@@ -23,16 +23,16 @@
         ========================== -->
         <div class="product-gallery">
             <!-- サムネ -->
-            <div class="thumbnail-list">
+            <!-- <div class="thumbnail-list">
                 <img th:src="@{/images/product1.jpg}" alt="">
                 <img th:src="@{/images/product2.jpg}" alt="">
                 <img th:src="@{/images/product3.jpg}" alt="">
                 <img th:src="@{/images/product4.jpg}" alt="">
                 <img th:src="@{/images/product5.jpg}" alt="">
-            </div>
+            </div> -->
             <!-- メイン　イメージ -->
             <div class="main-image">
-                <img th:src="@{/images/product1.jpg}" alt="ハートポイントクロップTシャツ">
+                <img th:src="${product.imageUrl}" alt="ハートポイントクロップTシャツ">
             </div>
         </div>
         <!-- =========================
