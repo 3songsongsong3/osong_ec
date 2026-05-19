@@ -60,11 +60,24 @@ Spring Boot と Thymeleaf を用いて開発している EC サイトの Web ア
 ---
 
 ## インフラ構成（予定）
-
 - Amazon EC2：アプリケーションサーバー
 - Amazon RDS (PostgreSQL)：データベース
 - Amazon S3：商品画像およびアップロードファイルの保存
 - AWS IAM：アクセス権限管理
+- Nginx：リバースプロキシ（HTTP/HTTPS の受付および Spring Boot への転送）
+
+## Webサーバー構成
+本プロジェクトでは、AWS EC2 上に Spring Boot アプリケーションを配置し、
+Nginx をリバースプロキシとして利用する構成を採用しています。
+
+```text
+Client (Browser)
+        ↓ HTTP/HTTPS (80/443)
+      Nginx
+        ↓ Reverse Proxy
+Spring Boot Application (Port 8080)
+        ↓
+ PostgreSQL (Amazon RDS)
 
 ---
 
