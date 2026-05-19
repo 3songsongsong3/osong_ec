@@ -38,69 +38,97 @@
         <!-- =========================
              右側：商品情報
         ========================== -->
-        <div class="product-info">
-            <h1 class="product-name">
-                ハートポイントクロップ半袖Tシャツ [4色]
-            </h1>
-            <div class="rating-area">
-                <span class="stars">★★★★★</span>
-                <span class="rating-score">5.0</span>
-                <a href="#" class="review-link">6件のレビュー</a>
-            </div>
-            <div class="price-area">
-                <p class="original-price">¥3,708</p>
-                <p class="sale-rate">39% OFF</p>
-                <p class="main-price">¥2,248</p>
-                <p class="coupon-price">
-                    ¥1,798 <span>コード利用で最安値</span>
-                </p>
-            </div>
-            <div class="info-table">
-                <div class="info-row">
-                    <span class="label">関税/消費税</span>
-                    <span class="value">
-                        カート内で関税・消費税の金額をご確認いただけます。
-                    </span>
-                </div>
-                <div class="info-row">
-                    <span class="label">配送予定日</span>
-                    <span class="value">
-                        平均6日以内に配送します。
-                    </span>
-                </div>
-                <div class="info-row">
-                    <span class="label">配送料</span>
-                    <span class="value">
-                        ¥550<br>
-                        ¥12,000以上ご購入時 送料無料
-                    </span>
-                </div>
-            </div>
-            <div class="option-group">
-                <label>カラー</label>
-                <select>
-                    <option>ホワイト</option>
-                    <option>ブラック</option>
-                    <option>ピンク</option>
-                </select>
-            </div>
-            <div class="option-group">
-                <label>サイズ</label>
-                <select>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                </select>
-            </div>
-            <div class="option-group">
-                <label>数量</label>
-                <input type="number" value="1" min="1">
-            </div>
-            <div class="action-buttons">
-                <button class="favorite-btn">♡</button>
-                <button class="cart-btn">カートに入れる</button>
-            </div>
-        </div>
+	    <div class="product-info">
+		    <!-- 商品名 -->
+		    <h1 class="product-name" th:text="${product.productName}">
+		        商品名
+		    </h1>
+		    <!-- 商品説明 -->
+		    <p class="product-description" th:text="${product.description}">
+		        商品説明
+		    </p>
+		
+		    <!-- 価格 -->
+		    <div class="price-area">
+		        <p class="main-price"
+		           th:text="'¥' + ${#numbers.formatInteger(product.price, 0, 'COMMA')}">
+		            ¥2,248
+		        </p>
+		    </div>
+		
+		    <!-- 在庫情報 -->
+		    <div class="info-table">
+		        <div class="info-row">
+		            <span class="label">在庫</span>
+		            <span class="value"
+		                  th:text="${product.stock > 0} ? '在庫あり (' + ${product.stock} + '点)' : '在庫切れ'">
+		                在庫あり
+		            </span>
+		        </div>
+		
+		        <div class="info-row">
+		            <span class="label">カテゴリ</span>
+		            <span class="value"
+		                  th:text="${product.categoryCode}">
+		                TOPS
+		            </span>
+		        </div>
+		
+		        <div class="info-row">
+		            <span class="label">商品ID</span>
+		            <span class="value"
+		                  th:text="${product.productId}">
+		                1
+		            </span>
+		        </div>
+		
+		        <div class="info-row">
+		            <span class="label">登録日</span>
+		            <span class="value"
+		                  th:text="${#temporals.format(product.createdDate, 'yyyy/MM/dd')}">
+		                2026/05/19
+		            </span>
+		        </div>
+		
+		        <div class="info-row">
+		            <span class="label">配送予定日</span>
+		            <span class="value">
+		                通常3〜7日以内に発送いたします。
+		            </span>
+		        </div>
+		
+		        <div class="info-row">
+		            <span class="label">配送料</span>
+		            <span class="value">
+		                全国一律 ¥550<br>
+		                ¥12,000以上ご購入時 送料無料
+		            </span>
+		        </div>
+		    </div>
+		
+		    <!-- 数量 -->
+		    <div class="option-group">
+		        <label for="quantity">数量</label>
+		        <input type="number"
+		               id="quantity"
+		               name="quantity"
+		               value="1"
+		               min="1"
+		               th:max="${product.stock}">
+		    </div>
+		
+		    <!-- ボタン -->
+		    <div class="action-buttons">
+		        <button type="button" class="favorite-btn">♡</button>
+		        <button type="button"
+		                class="cart-btn"
+		                th:disabled="${product.stock == 0}">
+		            <span th:text="${product.stock > 0} ? 'カートに入れる' : '在庫切れ'">
+		                カートに入れる
+		            </span>
+		        </button>
+		    </div>
+		</div>
     </section>
 
 </div>
