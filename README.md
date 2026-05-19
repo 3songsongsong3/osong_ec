@@ -71,13 +71,13 @@ Spring Boot と Thymeleaf を用いて開発している EC サイトの Web ア
 Nginx をリバースプロキシとして利用する構成を採用しています。
 
 
-Client (Browser)
-        ↓ HTTP/HTTPS (80/443)
-      Nginx
-        ↓ Reverse Proxy
-Spring Boot Application (Port 8080)
+- Client (Browser) HTTP/HTTPS (80/443)
+        ↓ 
+-     Nginx(Reverse Proxy)
+        ↓ 
+- Spring Boot Application (Port 8080)
         ↓
- PostgreSQL (Amazon RDS)
+-  PostgreSQL (Amazon RDS)
 
 ---
 
