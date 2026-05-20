@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>若い女性ファッション＆雑貨ブランド向け 無料ホームページテンプレート tp_fashion2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/users.css}">
+</head>
+
+<body class="home">
+	<div id="container">
+		<header>
+			<h1 id="logo">
+				<a href="index.html"><img th:src="@{images/logo.png}" alt="あなたのサイト名"></a>
+			</h1>
+			<!--メイン画像-->
+			<div class="mainimg">
+				<div class="slide img1">
+					<picture>
+					<source media="(max-width: 800px)" srcset="images/1.jpg">
+					<img th:src="@{images/1.jpg}" alt=""></picture>
+				</div>
+			</div>
+		</header>
+		<header th:replace="~{fragments/header :: header}"></header>
+		<div id="contents">
+			<h1>会員登録</h1>
+	        <form action="/users/register" method="post">
+	            <!-- ユーザーID -->
+	            <div class="form-group">
+	                <label for="user_id">ユーザーID</label>
+	                <input type="text" id="user_id" name="user_id" required>
+	            </div>
+	            <!-- 氏名 -->
+	            <div class="form-group">
+	                <label for="name">氏名</label>
+	                <input type="text" id="name" name="name" required>
+	            </div>
+	            <!-- 住所 -->
+	            <div class="form-group">
+	                <label for="address">住所</label>
+	                <input type="text" id="address" name="address">
+	            </div>
+	            <!-- メールアドレス -->
+	            <div class="form-group">
+	                <label for="email">メールアドレス</label>
+	                <input type="email" id="email" name="email" required>
+	            </div>
+	            <!-- 電話番号 -->
+	            <div class="form-group">
+	                <label for="phone_number">電話番号</label>
+	                <input type="tel" id="phone_number" name="phone_number">
+	            </div>
+	            <!-- パスワード -->
+	            <div class="form-group">
+	                <label for="password">パスワード</label>
+	                <!-- 実際にはサーバー側でハッシュ化するため、name は password にするのが一般的 -->
+	                <input type="password" id="password" name="password" required>
+	            </div>
+	            <button type="submit">登録する</button>
+	        </form>
+		</div>
+		<!--/#contents-->
+		<header th:replace="~{fragments/footer :: footer}"></header>
+	</div>
+	<!--/#container-->
+	<!--jQueryの読み込み-->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!--パララックス（inview）-->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+	<script src="js/jquery.inview_set.js"></script>
+	<!--このテンプレート専用のスクリプト-->
+	<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
