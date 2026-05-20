@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDto {
@@ -49,21 +47,6 @@ public class UserDto {
      */
     private String status;
     
-    public UserDto(String userId,
-            String name,
-            String address,
-            String email,
-            String phoneNumber,
-            String password,
-            String status) {
-			 this.userId = userId;
-			 this.name = name;
-			 this.address = address;
-			 this.email = email;
-			 this.phoneNumber = phoneNumber;
-			 this.password = password;
-			 this.status = status;
-			}
     /**
      * Entity → DTO 変換
      *
@@ -74,15 +57,17 @@ public class UserDto {
         if (user == null) {
             return null;
         }
-        return new UserDto(
-        	    user.getUserId(),
-        	    user.getName(),
-        	    user.getAddress(),
-        	    user.getEmail(),
-        	    user.getPhoneNumber(),    
-        	    null,   
-        	    user.getStatus()
-    	);
+        
+        UserDto dto = new UserDto();
+        dto.setUserId(user.getUserId());
+        dto.setName(user.getName());
+        dto.setAddress(user.getAddress());
+        dto.setEmail(user.getEmail());
+        dto.setPhoneNumber(user.getPhoneNumber());
+        dto.setPassword(null);   // 조회 시 평문 비밀번호는 없음
+        dto.setStatus(user.getStatus());
+
+        return dto;
     }
    
     /**
@@ -100,4 +85,48 @@ public class UserDto {
         user.setStatus(this.status);
         return user;
     }
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+    
+    
 }
