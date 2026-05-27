@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>会員登録</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="home">
+
+<div id="container">
+    <header>
+        <h1 id="logo">
+            <a href="index.html"><img th:src="@{/images/logo.png}" alt="ロゴ"></a>
+        </h1>
+        <div class="mainimg">
+            <div class="slide img1">
+                <picture>
+                    <source media="(max-width: 800px)" srcset="/images/1.jpg">
+                    <img th:src="@{/images/1.jpg}" alt="">
+                </picture>
+            </div>
+        </div>
+    </header>
+
+    <div th:replace="~{fragments/header :: header}"></div>
+
+    <div id="contents" class="form-container">
+        <h1 style="text-align: center;">会員登録</h1>
+        
+        <form action="/users/register" method="post" id="userRegForm" class="h-adr">
+            <span class="p-country-name" style="display:none;">Japan</span>
+            
+            <div class="form-group">
+                <label for="user_id">ユーザーID</label>
+                <input type="text" id="user_id" name="user_id" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">氏名</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label>郵便番号</label>
+                <input type="text" class="p-postal-code" name="zipcode" size="8" maxlength="8" placeholder="例: 1234567">
+            </div>
+            
+            <div class="form-group">
+                <label>都道府県</label>
+                <input type="text" class="p-region" name="region" readonly>
+            </div>
+            
+            <div class="form-group">
+                <label>市区町村</label>
+                <input type="text" class="p-locality" name="locality" readonly>
+            </div>
+            
+            <div class="form-group">
+                <label>町域・番地</label>
+                <input type="text" class="p-street-address p-extended-address" name="street_address">
+            </div>
+
+            <div class="form-group">
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">パスワード</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn-submit">登録する</button>
+        </form>
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://yubinbango.github.io/yubinbango/yubinbango.js"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

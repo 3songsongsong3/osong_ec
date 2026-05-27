@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>若い女性ファッション＆雑貨ブランド向け 無料ホームページテンプレート tp_fashion2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body class="home">
+	<div id="container">
+		<header>
+			<h1 id="logo">
+				<a href="index.html"><img th:src="@{images/logo.png}"
+					alt="あなたのサイト名"></a>
+			</h1>
+			<!--メイン画像-->
+			<div class="mainimg">
+				<div class="slide img1">
+					<picture>
+					<source media="(max-width: 800px)" srcset="images/1.jpg">
+					<img th:src="@{images/1.jpg}" alt=""></picture>
+				</div>
+			</div>
+		</header>
+		<header th:replace="~{fragments/header :: header}"></header>
+		<div id="contents">
+			<!-- Login Section -->
+			<main class="login-section">
+				<!-- Left Image -->
+				<div class="login-image">
+					<img src="images/login-fashion.jpg" alt="Fashion Login Image">
+				</div>
+
+				<!-- Right Form -->
+				<div class="login-card">
+					<h2>Welcome Back</h2>
+					<p class="login-subtitle">ログインしてショッピングを楽しみましょう</p>
+
+					<form action="/login" method="post">
+						<div class="form-group">
+							<label for="email">メールアドレス</label> <input type="email" id="email"
+								name="username" placeholder="メールアドレスを入力" required>
+						</div>
+
+						<div class="form-group">
+							<label for="password">パスワード</label> <input type="password"
+								id="password" name="password" placeholder="パスワードを入力" required>
+						</div>
+
+						<div class="forgot-password">
+							<a href="#">パスワードをお忘れですか？</a>
+						</div>
+
+						<button type="submit" class="btn-login">ログイン</button>
+
+						<div class="divider">
+							<span>または</span>
+						</div>
+
+						<a href="/register" class="btn-register">新規会員登録</a>
+					</form>
+				</div>
+			</main>
+		</div>
+		<!--/#contents-->
+		<header th:replace="~{fragments/footer :: footer}"></header>
+	</div>
+	<!--/#container-->
+	<!--jQueryの読み込み-->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!--パララックス（inview）-->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+	<script src="js/jquery.inview_set.js"></script>
+	<!--このテンプレート専用のスクリプト-->
+	<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

@@ -2,6 +2,7 @@ package com.ec.demo.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.ec.demo.entity.Product;
@@ -12,6 +13,9 @@ import com.ec.demo.repository.ProductRepository;
  */
 @Service
 public class ProductService {
+	 
+	@Value("${aws.s3.base-url-products}")
+    private String s3BaseUrl;
 
     private final ProductRepository productRepository;
 
@@ -48,5 +52,9 @@ public class ProductService {
      */
     public List<Product> findLatestProducts() {
         return productRepository.findTop8ByOrderByCreatedDateDesc();
+    }
+    
+    public String getImageUrl(Product product) {
+        return s3BaseUrl + product.getImageUrl();
     }
 }

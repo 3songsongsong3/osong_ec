@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ショッピングカート </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        /* 장바구니 전용 추가 스타일 */
+        .cart-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .cart-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        .cart-table th { border-bottom: 2px solid #333; padding: 15px; text-align: center; font-size: 14px; }
+        .cart-table td { border-bottom: 1px solid #eee; padding: 20px 10px; vertical-align: middle; }
+        
+        .item-info { display: flex; align-items: center; }
+        .item-info img { width: 80px; height: auto; margin-right: 15px; border: 1px solid #eee; }
+        .item-text { text-align: left; }
+        .item-name { font-weight: bold; font-size: 15px; display: block; }
+        .item-option { color: #888; font-size: 12px; }
+
+        .qty-input { width: 40px; text-align: center; padding: 5px; border: 1px solid #ccc; }
+        .remove-btn { font-size: 12px; color: #999; text-decoration: underline; cursor: pointer; border: none; background: none; }
+        .remove-btn:hover { color: #f66; }
+
+        /* 주문 요약 영역 */
+        .cart-summary { background: #fafafa; padding: 30px; text-align: right; border-radius: 5px; }
+        .summary-row { margin-bottom: 10px; font-size: 14px; }
+        .total-row { margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd; font-size: 20px; font-weight: bold; color: #ff6f61; }
+        
+        .cart-buttons { display: flex; justify-content: space-between; margin-top: 30px; }
+        .btn-continue { padding: 15px 30px; background: #eee; color: #333; text-decoration: none; border-radius: 4px; transition: 0.3s; }
+        .btn-checkout { padding: 15px 60px; background: #ff6f61; color: #fff; text-decoration: none; border-radius: 4px; font-weight: bold; transition: 0.3s; }
+        .btn-checkout:hover { background: #e55a4f; opacity: 0.9; }
+    </style>
+</head>
+<body class="home">
+
+<div id="container">
+    <header>
+        <h1 id="logo">
+            <a href="index.html"><img th:src="@{/images/logo.png}" alt="Your Brand Name"></a>
+        </h1>
+        <div class="mainimg">
+            <div class="slide img1">
+                <picture>
+                    <source media="(max-width: 800px)" th:srcset="@{/images/1.jpg}">
+                    <img th:src="@{/images/1.jpg}" alt="메인 이미지">
+                </picture>
+            </div>
+        </div>
+    </header>
+
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <div id="contents" class="cart-container">
+        <h1 style="text-align: center; margin-bottom: 40px;">ショッピングカート</h1>
+
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>商品情報</th>
+                    <th>価格</th>
+                    <th>数量</th>
+                    <th>小計</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="item-info">
+                        <img th:src="@{/images/item_sample.jpg}" alt="상품 이미지">
+                        <div class="item-text">
+                            <span class="item-name">Vネック ケーブルニット</span>
+                            <span class="item-option">Color: Beige / Size: M</span>
+                        </div>
+                    </td>
+                    <td style="text-align: center;">&yen;5,400</td>
+                    <td style="text-align: center;">
+                        <input type="number" value="1" min="1" class="qty-input">
+                    </td>
+                    <td style="text-align: center; font-weight: bold;">&yen;5,400</td>
+                    <td style="text-align: center;">
+                        <button class="remove-btn">削除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <div class="summary-row">商品合計 : &yen;5,400</div>
+            <div class="summary-row">送料 : &yen;550</div>
+            <div class="total-row">お支払い合計 : &yen;5,950 (税込)</div>
+        </div>
+
+        <div class="cart-buttons">
+            <a href="/products" class="btn-continue">お買い物を続ける</a>
+            <a href="/order/checkout" class="btn-checkout">レジへ進む</a>
+        </div>
+    </div>
+
+    <br style="margin:50px">
+    <header th:replace="~{fragments/footer :: footer}"></header>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script th:src="@{/js/main.js}"></script>
+
+</body>
+</html>
