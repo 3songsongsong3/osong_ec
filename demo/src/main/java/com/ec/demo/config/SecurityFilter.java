@@ -19,6 +19,8 @@ public class SecurityFilter {
                         "/products/**",
                         "/users",
                         "/users/**",
+                        "/cart",
+                        "/cart/**",
                         "/css/**",
                         "/js/**",
                         "/images/**"
